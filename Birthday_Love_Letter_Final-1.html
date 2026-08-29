@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Happy Birthday, My Favorite Person ♡</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;color:#573b46;background:linear-gradient(145deg,#fff0f5,#fff8fc 45%,#fff4e9);min-height:100vh;overflow-x:hidden}.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:20}.heart{position:absolute;top:-40px;animation:fall linear infinite;opacity:.75}@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+.cover{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:25px}.cover-inner{width:min(620px,100%)}.eyebrow{font-size:12px;letter-spacing:3px;color:#bd607e;text-transform:uppercase}.title{font-size:clamp(39px,10vw,76px);line-height:.98;color:#d45f82;font-weight:900;text-shadow:2px 3px #fff;margin:18px 0}.hint{color:#a26478;font-size:15px;margin-top:25px}.envelope{width:min(320px,82vw);height:min(205px,53vw);margin:35px auto 0;position:relative;cursor:pointer;filter:drop-shadow(0 18px 24px #a75c7526);transition:.4s}.envelope:hover{transform:translateY(-6px)}.env-body{position:absolute;inset:0;background:#f49ab5;border-radius:14px;overflow:hidden}.env-body:before,.env-body:after{content:"";position:absolute;bottom:0;width:0;height:0;border-style:solid}.env-body:before{left:0;border-width:100px 160px 0 0;border-color:#ed87a5 transparent transparent}.env-body:after{right:0;border-width:0 160px 100px 0;border-color:transparent #e77f9d transparent}.flap{position:absolute;z-index:4;left:0;top:0;width:0;height:0;border-left:160px solid transparent;border-right:160px solid transparent;border-top:115px solid #f8b1c5;transform-origin:top;transition:1s}.mini-letter{position:absolute;z-index:2;left:28px;right:28px;top:23px;height:150px;background:#fffdf9;border-radius:9px;transition:1s;box-shadow:0 5px 15px #7f425022}.seal{position:absolute;z-index:5;left:50%;top:72px;transform:translateX(-50%);width:65px;height:65px;border-radius:50%;background:#fff;display:grid;place-items:center;color:#e56e90;font-size:39px;box-shadow:0 5px 12px #9d4d6322}.open .flap{transform:rotateX(180deg);z-index:1}.open .mini-letter{transform:translateY(-85px)}
+#page{display:none;max-width:900px;margin:auto;padding:30px 16px 70px}.visible{display:block;animation:up .8s ease}@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}.hero{text-align:center;padding:15px 4px 10px}.hero h1{font-size:clamp(39px,9vw,72px);line-height:1;color:#d45f82;margin:14px 0}.hero p{color:#946b7b;font-size:16px}.toolbar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px 0}.btn{border:0;border-radius:999px;padding:11px 17px;background:#d97596;color:#fff;cursor:pointer;font-weight:700}.btn.alt{background:#fff;color:#b25573;border:1px solid #e8bdca}.card{background:#fffdfbdc;border:1px solid #f0cbd7;border-radius:27px;padding:23px;margin:20px 0;box-shadow:0 15px 40px #8d526515}.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.photo{height:260px;border-radius:20px;background:#ffe1ea;border:1px dashed #e8aabd;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}.photo:first-child{grid-row:span 2;height:532px}.photo img{width:100%;height:100%;object-fit:cover;display:none}.photo .placeholder{color:#c4758c;text-align:center;padding:15px}.photo input{position:absolute;bottom:8px;left:8px;right:8px;width:calc(100% - 16px);font-size:11px;background:#fffdfdca;border-radius:10px;padding:7px}.letter{font-size:16px;line-height:1.85;white-space:pre-line;min-height:260px}.editable{outline:2px dashed transparent;border-radius:8px}.editable:focus{outline-color:#e9a8bd;background:#fff8fa}.tip{text-align:center;color:#9d7b86;font-size:12px;margin-top:12px}.footer{text-align:center;color:#c06180;font-weight:700;font-size:18px;padding:15px}
+@media(max-width:600px){.gallery{grid-template-columns:1fr 1fr}.photo{height:180px}.photo:first-child{height:372px}.card{padding:18px;border-radius:22px}.letter{font-size:15px;line-height:1.8}.envelope{margin-top:28px}.flap{border-left-width:41vw;border-right-width:41vw;border-top-width:31vw}.env-body:before{border-width:27vw 41vw 0 0}.env-body:after{border-width:0 41vw 27vw 0}}
+</style>
+</head>
+<body>
+<div class="hearts" id="hearts"></div>
+<section class="cover" id="cover"><div class="cover-inner"><div class="eyebrow">a little surprise for you ♡</div><div class="title">Happy Birthday,<br>My Favorite Person</div><div class="envelope" id="env" onclick="openLetter()"><div class="mini-letter"></div><div class="env-body"></div><div class="flap"></div><div class="seal">♡</div></div><div class="hint">tap the envelope to open your letter 💌</div></div></section>
+<main id="page">
+<section class="hero"><div class="eyebrow">for my special person</div><h1 class="editable" contenteditable="true">Happy Birthday,<br>My Favorite Person</h1><p class="editable" contenteditable="true">Semoga hari ini menjadi awal dari semua hal baik untukmu ✨</p></section>
+<div class="toolbar"><button class="btn" onclick="toggleEdit()">✏️ Edit tulisan</button><button class="btn alt" onclick="saveText()">💾 Simpan tulisan</button></div>
+<section class="card"><div class="gallery">
+<div class="photo"><div class="placeholder">📸<br>Foto kalian 1<br><small>pilih foto di bawah</small></div><img><input type="file" accept="image/*" onchange="setPhoto(this)"></div>
+<div class="photo"><div class="placeholder">📸<br>Foto kalian 2</div><img><input type="file" accept="image/*" onchange="setPhoto(this)"></div>
+<div class="photo"><div class="placeholder">📸<br>Foto kalian 3</div><img><input type="file" accept="image/*" onchange="setPhoto(this)"></div>
+<div class="photo"><div class="placeholder">📸<br>Foto kalian 4</div><img><input type="file" accept="image/*" onchange="setPhoto(this)"></div>
+</div><div class="tip">Foto bisa kamu ganti sendiri kapan saja 🤍</div></section>
+<section class="card"><div class="letter editable" contenteditable="true">Happy birthday, sayangku. 🤍
+
+Di hari ulang tahunmu ini, aku cuma ingin bilang betapa bersyukurnya aku pernah dipertemukan dengan kamu.
+
+Perjalanan kita nggak selalu mudah. Kita pernah ketawa bareng, saling bikin bahagia, tapi kita juga pernah bertengkar, salah paham, kecewa, marah, bahkan sama-sama capek. Tapi setelah semuanya, rasa sayangku ke kamu tetap ada.
+
+Aku tahu aku juga jauh dari sempurna. Maaf untuk semua kurangku. Aku masih belajar bagaimana mencintai kamu dengan cara yang lebih baik.
+
+Aku nggak berharap hubungan kita selalu sempurna. Aku cuma berharap setiap kali ada masalah, kita memilih untuk saling mendengarkan, memahami, dan memperbaiki, bukan saling menjauh. Aku ingin kita tumbuh bersama dan membuat hubungan ini terasa lebih aman, nyaman, dan penuh kasih.
+
+Terima kasih sudah menjadi bagian dari hidupku. Terima kasih untuk semua waktu, cerita, tawa, perhatian, dan kenangan yang sudah kita punya.
+
+Semoga di umur kamu yang baru, kamu selalu sehat, bahagia, dimudahkan dalam semua urusan, dilancarkan rezekinya, dan semua yang sedang kamu perjuangkan bisa tercapai.
+
+Dan untuk kita... semoga suatu hari nanti kita bisa melihat semua pertengkaran dan masa sulit yang pernah kita lewati sambil tersenyum dan berkata, “ternyata kita berhasil melewatinya.”
+
+Aku nggak tahu akan seperti apa perjalanan kita nanti. Tapi untuk hari ini, aku masih ingin memilih kamu.
+
+Happy birthday, cintaku. 🤍
+I love you. Always. 🤍🥺</div></section>
+<section class="card" style="text-align:center"><div style="font-size:35px">♡ ♡ ♡</div><p class="editable" contenteditable="true">Semoga aku masih bisa mengucapkan selamat ulang tahun untukmu di tahun-tahun berikutnya, menemani kamu bertumbuh, merayakan keberhasilanmu, dan menjadi tempatmu pulang ketika dunia terasa berat.</p><div style="color:#d45f82;font-size:18px;font-weight:700">— from someone who still chooses you ♡</div></section>
+<div class="footer">made with lots of love, just for you ♡</div>
+</main>
+<script>
+for(let i=0;i<32;i++){const h=document.createElement('span');h.className='heart';h.textContent=['♡','♥','❤','✦'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'%';h.style.fontSize=(12+Math.random()*24)+'px';h.style.animationDuration=(5+Math.random()*7)+'s';h.style.animationDelay=(-Math.random()*10)+'s';document.getElementById('hearts').appendChild(h)}
+function openLetter(){document.getElementById('env').classList.add('open');setTimeout(()=>{document.getElementById('cover').style.display='none';document.getElementById('page').classList.add('visible');window.scrollTo(0,0)},900)}
+function setPhoto(input){const box=input.parentElement,img=box.querySelector('img'),ph=box.querySelector('.placeholder');const file=input.files[0];if(!file)return;const r=new FileReader();r.onload=e=>{img.src=e.target.result;img.style.display='block';ph.style.display='none'};r.readAsDataURL(file)}
+function toggleEdit(){document.querySelectorAll('.editable').forEach(e=>e.setAttribute('contenteditable',e.getAttribute('contenteditable')==='true'?'false':'true'));alert('Mode edit aktif/nonaktif. Tap tulisan untuk mengubahnya ✨')}
+function saveText(){localStorage.setItem('birthdayPageText',document.getElementById('page').innerHTML);alert('Tulisan tersimpan di browser ini 🤍')}
+</script></body></html>
